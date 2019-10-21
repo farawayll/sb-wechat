@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2a97b520-36f3-4c91-921e-d657bfd71141" name="Default Changelist" comment="" />
+    <list default="true" id="2a97b520-36f3-4c91-921e-d657bfd71141" name="Default Changelist" comment="删除target文件">
+      <change afterPath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lang/wechat/config/ma/WxMaConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lang/wechat/config/ma/WxMaConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lang/wechat/config/ma/WxMaRedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lang/wechat/config/ma/MyWxMaRedisConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lang/wechat/config/mp/WxMpConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lang/wechat/config/mp/WxMpConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lang/wechat/config/mp/WxMpRedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lang/wechat/config/mp/MyWxMpRedisConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +47,7 @@
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -92,7 +103,25 @@
       <workItem from="1569225529090" duration="4507000" />
       <workItem from="1569232694314" duration="783000" />
       <workItem from="1569323449128" duration="81000" />
+      <workItem from="1569328984828" duration="169000" />
+      <workItem from="1571137131987" duration="628000" />
+      <workItem from="1571639249478" duration="3379000" />
     </task>
+    <task id="LOCAL-00001" summary="删除target文件">
+      <created>1569329045301</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1569329045301</updated>
+    </task>
+    <task id="LOCAL-00002" summary="删除target文件">
+      <created>1569329140858</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1569329140858</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -100,5 +129,22 @@
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="readme" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="删除target文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="删除target文件" />
   </component>
 </project>

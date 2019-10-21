@@ -26,16 +26,16 @@ public class WxMpConfiguration {
     private String aesKey;
 
     @Autowired
-    private WxMpRedisConfig mpConfig;
+    private MyWxMpRedisConfig mpConfig;
 
     @Bean
     public WxMpService wxMpService() {
         mpConfig.setAppId(appId);
-		//mpConfig.setSecret(secret);
+		mpConfig.setSecret(secret);
         mpConfig.setToken(token);
         mpConfig.setAesKey(aesKey);
 
-        final WxMpService wxMpService = new WxMpServiceImpl();
+        WxMpServiceImpl wxMpService = new WxMpServiceImpl();
         wxMpService.setWxMpConfigStorage(mpConfig);
         return wxMpService;
     }

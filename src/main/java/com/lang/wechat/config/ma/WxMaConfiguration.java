@@ -2,11 +2,8 @@ package com.lang.wechat.config.ma;
 
 import cn.binarywang.wx.miniapp.api.WxMaService;
 import cn.binarywang.wx.miniapp.api.impl.WxMaServiceImpl;
-import cn.binarywang.wx.miniapp.config.WxMaConfig;
-import cn.binarywang.wx.miniapp.config.impl.WxMaRedisConfigImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -32,17 +29,17 @@ public class WxMaConfiguration {
 	private String msgDataFormat;
 
 	@Autowired
-	private WxMaRedisConfig maConfig;
+	private MyWxMaRedisConfig maConfig;
 
 	@Bean
 	public WxMaService wxMaService() {
 		maConfig.setAppid(appId);
-		//maConfig.setSecret(secret);
+		maConfig.setSecret(secret);
 		maConfig.setToken(token);
 		maConfig.setAesKey(aesKey);
 		maConfig.setMsgDataFormat(msgDataFormat);
 
-		final WxMaService wxMaService = new WxMaServiceImpl();
+		WxMaServiceImpl wxMaService = new WxMaServiceImpl();
 		wxMaService.setWxMaConfig(maConfig);
 		return wxMaService;
 	}
