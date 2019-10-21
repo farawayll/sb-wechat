@@ -3,6 +3,7 @@ package com.lang.wechat.config.trade;
 import com.github.binarywang.wxpay.config.WxPayConfig;
 import com.github.binarywang.wxpay.service.WxPayService;
 import com.github.binarywang.wxpay.service.impl.WxPayServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -45,7 +46,7 @@ public class WxTradeConfiguration {
         payConfig.setMchKey(mchKey);
         payConfig.setKeyPath(keyPath);
 
-        final WxPayService wxPayService = new WxPayServiceImpl();
+        WxPayServiceImpl wxPayService = new WxPayServiceImpl();
         wxPayService.setConfig(payConfig);
         return wxPayService;
     }
