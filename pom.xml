@@ -16,7 +16,7 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <wx.version>3.5.0</wx.version>
+        <wx.version>3.6.0</wx.version>
         <hutool.version>4.6.5</hutool.version>
         <lombok.version>1.18.10</lombok.version>
     </properties>
@@ -49,7 +49,6 @@
             <artifactId>hutool-all</artifactId>
             <version>${hutool.version}</version>
         </dependency>
-
         <!-- 微信支付 -->
         <dependency>
             <groupId>com.github.binarywang</groupId>
