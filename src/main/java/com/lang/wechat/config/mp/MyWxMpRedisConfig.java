@@ -10,50 +10,43 @@ import java.util.concurrent.TimeUnit;
 @Component
 public class MyWxMpRedisConfig extends WxMpDefaultConfigImpl {
 
-	private final static String ACCESS_TOKEN_KEY = "wx:access:token:";
+    private final static String MP_ACCESS_TOKEN = "wx:mp:access_token";
 
-	@Autowired
-	private StringRedisTemplate redisTemplate;
+    @Autowired
+    private StringRedisTemplate stringRedisTemplate;
 
-	/**
-	 * 获取token
-	 *
-	 * @return String
-	 */
-	@Override
-	public String getAccessToken() {
-		return redisTemplate.opsForValue().get(ACCESS_TOKEN_KEY);
-	}
+    /**
+     * 获取token
+     */
+    @Override
+    public String getAccessToken() {
+        return stringRedisTemplate.opsForValue().get(MP_ACCESS_TOKEN);
+    }
 
-	/**
-	 * token是否过期
-	 * redisTemplate.getExpire(key)的值单位默认为秒
-	 * 提前5秒
-	 *
-	 * @return Boolean
-	 */
-	@Override
-	public boolean isAccessTokenExpired() {
-		return redisTemplate.getExpire(ACCESS_TOKEN_KEY) < 5L;
-	}
+    /**
+     * token是否过期
+     * 提前5秒
+     */
+    @Override
+    public boolean isAccessTokenExpired() {
+        return stringRedisTemplate.getExpire(MP_ACCESS_TOKEN) < 5L;
+    }
 
-	/**
-	 * 更新token 并设置过期时间
-	 * 正常情况，微信官方的accesstoken过期时间为2小时，这里缩短5秒
-	 * @param accessToken
-	 * @param expiresInSeconds
-	 */
-	@Override
-	public synchronized void updateAccessToken(String accessToken, int expiresInSeconds) {
-		redisTemplate.opsForValue().set(ACCESS_TOKEN_KEY, accessToken);
-		redisTemplate.expire(ACCESS_TOKEN_KEY, expiresInSeconds - 5, TimeUnit.SECONDS);
-	}
+    /**
+     * 更新token 并设置过期时间
+     * 微信官方的access_token过期时间为2小时
+     */
+    @Override
+    public synchronized void updateAccessToken(String accessToken, int expiresInSeconds) {
+        stringRedisTemplate.opsForValue().set(MP_ACCESS_TOKEN, accessToken);
+        stringRedisTemplate.expire(MP_ACCESS_TOKEN, expiresInSeconds, TimeUnit.SECONDS);
+    }
 
-	/**
-	 * 强制过期token
-	 */
-	@Override
-	public void expireAccessToken() {
-		redisTemplate.expire(ACCESS_TOKEN_KEY, 0, TimeUnit.SECONDS);
-	}
+    /**
+     * 强制过期token
+     */
+    @Override
+    public void expireAccessToken() {
+        stringRedisTemplate.expire(MP_ACCESS_TOKEN, 0, TimeUnit.SECONDS);
+    }
 }

@@ -11,36 +11,36 @@ import org.springframework.context.annotation.Configuration;
  * 小程序模板消息配置类
  */
 @Configuration
-public class WxMaConfiguration {
+public class MyWxMaConfig {
 
-	@Value("${wechat.ma.appId}")
+	@Value("${wx.ma.appId}")
 	private String appId;
 
-	@Value("${wechat.ma.secret}")
+	@Value("${wx.ma.secret}")
 	private String secret;
 
-	@Value("${wechat.ma.token}")
+	@Value("${wx.ma.token}")
 	private String token;
 
-	@Value("${wechat.ma.aesKey}")
+	@Value("${wx.ma.aesKey}")
 	private String aesKey;
 
-	@Value("${wechat.ma.msgDataFormat}")
+	@Value("${wx.ma.msgDataFormat}")
 	private String msgDataFormat;
 
 	@Autowired
-	private MyWxMaRedisConfig maConfig;
+	private MyWxMaRedisConfig maRedisConfig;
 
 	@Bean
 	public WxMaService wxMaService() {
-		maConfig.setAppid(appId);
-		maConfig.setSecret(secret);
-		maConfig.setToken(token);
-		maConfig.setAesKey(aesKey);
-		maConfig.setMsgDataFormat(msgDataFormat);
+		maRedisConfig.setAppid(appId);
+		maRedisConfig.setSecret(secret);
+		maRedisConfig.setToken(token);
+		maRedisConfig.setAesKey(aesKey);
+		maRedisConfig.setMsgDataFormat(msgDataFormat);
 
 		WxMaServiceImpl wxMaService = new WxMaServiceImpl();
-		wxMaService.setWxMaConfig(maConfig);
+		wxMaService.setWxMaConfig(maRedisConfig);
 		return wxMaService;
 	}
 }

@@ -12,30 +12,30 @@ import org.springframework.context.annotation.Configuration;
  * 微信支付配置类
  */
 @Configuration
-public class WxTradeConfiguration {
+public class MyWxTradeConfig {
 
     /**
      * appId
      */
-    @Value("${wechat.pay.appId}")
+    @Value("${wx.pay.appId}")
     private String appId;
 
     /**
      * 商户号
      */
-    @Value("${wechat.pay.mchId}")
+    @Value("${wx.pay.mchId}")
     private String mchId;
 
     /**
      * 商户密钥
      */
-    @Value("${wechat.pay.mchKey}")
+    @Value("${wx.pay.mchKey}")
     private String mchKey;
 
     /**
      * p12密钥
      */
-    @Value("${wechat.pay.keyPath}")
+    @Value("${wx.pay.keyPath}")
     private String keyPath;
 
     @Bean

@@ -11,32 +11,32 @@ import org.springframework.context.annotation.Configuration;
  * 服务号模板消息配置类
  */
 @Configuration
-public class WxMpConfiguration {
+public class MyWxMpConfig {
 
-    @Value("${wechat.mp.appId}")
+    @Value("${wx.mp.appId}")
     private String appId;
 
-    @Value("${wechat.mp.secret}")
+    @Value("${wx.mp.secret}")
     private String secret;
 
-    @Value("${wechat.mp.token}")
+    @Value("${wx.mp.token}")
     private String token;
 
-    @Value("${wechat.mp.aesKey}")
+    @Value("${wx.mp.aesKey}")
     private String aesKey;
 
     @Autowired
-    private MyWxMpRedisConfig mpConfig;
+    private MyWxMpRedisConfig mpRedisConfig;
 
     @Bean
     public WxMpService wxMpService() {
-        mpConfig.setAppId(appId);
-		mpConfig.setSecret(secret);
-        mpConfig.setToken(token);
-        mpConfig.setAesKey(aesKey);
+        mpRedisConfig.setAppId(appId);
+		mpRedisConfig.setSecret(secret);
+        mpRedisConfig.setToken(token);
+        mpRedisConfig.setAesKey(aesKey);
 
         WxMpServiceImpl wxMpService = new WxMpServiceImpl();
-        wxMpService.setWxMpConfigStorage(mpConfig);
+        wxMpService.setWxMpConfigStorage(mpRedisConfig);
         return wxMpService;
     }
 }

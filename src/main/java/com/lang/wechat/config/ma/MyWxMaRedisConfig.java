@@ -10,43 +10,36 @@ import java.util.concurrent.TimeUnit;
 @Component
 public class MyWxMaRedisConfig extends WxMaDefaultConfigImpl {
 
-    private final static String ACCESS_TOKEN_KEY = "wx:access:token:";
+    private final static String MA_ACCESS_TOKEN = "wx:ma:access_token";
 
     @Autowired
-    private StringRedisTemplate redisTemplate;
+    private StringRedisTemplate stringRedisTemplate;
 
     /**
      * 获取token
-     *
-     * @return String
      */
     @Override
     public String getAccessToken() {
-        return redisTemplate.opsForValue().get(ACCESS_TOKEN_KEY);
+        return stringRedisTemplate.opsForValue().get(MA_ACCESS_TOKEN);
     }
 
     /**
      * token是否过期
-     * redisTemplate.getExpire(key)的值单位默认为秒
      * 提前5秒
-     *
-     * @return Boolean
      */
     @Override
     public boolean isAccessTokenExpired() {
-        return redisTemplate.getExpire(ACCESS_TOKEN_KEY) < 5L;
+        return stringRedisTemplate.getExpire(MA_ACCESS_TOKEN) < 5L;
     }
 
     /**
      * 更新token 并设置过期时间
-     * 正常情况，微信官方的accesstoken过期时间为2小时，这里缩短5秒
-     * @param accessToken
-     * @param expiresInSeconds
+     * 微信官方的access_token过期时间为2小时
      */
     @Override
     public synchronized void updateAccessToken(String accessToken, int expiresInSeconds) {
-        redisTemplate.opsForValue().set(ACCESS_TOKEN_KEY, accessToken);
-        redisTemplate.expire(ACCESS_TOKEN_KEY, expiresInSeconds - 5, TimeUnit.SECONDS);
+        stringRedisTemplate.opsForValue().set(MA_ACCESS_TOKEN, accessToken);
+        stringRedisTemplate.expire(MA_ACCESS_TOKEN, expiresInSeconds, TimeUnit.SECONDS);
     }
 
     /**
@@ -54,6 +47,6 @@ public class MyWxMaRedisConfig extends WxMaDefaultConfigImpl {
      */
     @Override
     public void expireAccessToken() {
-        redisTemplate.expire(ACCESS_TOKEN_KEY, 0, TimeUnit.SECONDS);
+        stringRedisTemplate.expire(MA_ACCESS_TOKEN, 0, TimeUnit.SECONDS);
     }
 }
