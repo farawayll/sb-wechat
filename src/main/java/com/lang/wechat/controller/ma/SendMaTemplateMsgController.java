@@ -26,10 +26,10 @@ public class SendMaTemplateMsgController {
     @Autowired
     private WxMaService wxMaService;
 
-    @Value("${wechat.mp.appId}")
+    @Value("${wx.mp.appId}")
     private String mpAppId;
 
-    @Value("${wechat.ma.appId}")
+    @Value("${wx.ma.appId}")
     private String maAppId;
 
     /**

@@ -22,7 +22,7 @@ public class SendMpTemplateMsgController {
     @Autowired
     private WxMpService wxMpService;
 
-    @Value("${wechat.ma.appId}")
+    @Value("${wx.ma.appId}")
     private String appId;
 
     /**
