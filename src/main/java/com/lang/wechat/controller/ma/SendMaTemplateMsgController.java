@@ -31,6 +31,7 @@ public class SendMaTemplateMsgController {
 
     /**
      * sendTemplateMsg()发送小程序模板消息 v1
+     * 已下线
      *
      * @return
      */
@@ -59,6 +60,7 @@ public class SendMaTemplateMsgController {
 
     /**
      * sendUniformMsg()发送小程序模板消息 v2
+     * 已下线
      *
      * @return
      */
@@ -86,8 +88,10 @@ public class SendMaTemplateMsgController {
         }
     }
 
+    /**=====================================上方于2020-1-20由微信官方废弃===========================================*/
+    /**============================================================================================================*/
     /**
-     * sendKefuMsg()发送小程序客服消息 应用较少 一般都是服务号客服消息
+     * 发送小程序客服消息
      *
      * @return
      */
@@ -124,7 +128,7 @@ public class SendMaTemplateMsgController {
     }
 
     /**
-     * 通过小程序的openId发送服务号的模板消息
+     * 通过小程序的openId发送“服务号的模板消息”
      *
      * @return
      */
@@ -159,6 +163,7 @@ public class SendMaTemplateMsgController {
 
     /**
      * 发送小程序订阅消息
+     *
      * @return
      */
     @GetMapping("/sendMaSubscribeMsg")
