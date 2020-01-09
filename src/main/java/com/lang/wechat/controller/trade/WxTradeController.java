@@ -1,6 +1,7 @@
 package com.lang.wechat.controller.trade;
 
 import cn.hutool.json.JSONUtil;
+import com.github.binarywang.wxpay.bean.notify.WxPayNotifyResponse;
 import com.github.binarywang.wxpay.bean.notify.WxPayOrderNotifyResult;
 import com.github.binarywang.wxpay.bean.notify.WxPayRefundNotifyResult;
 import com.github.binarywang.wxpay.bean.order.WxPayMpOrderResult;
@@ -87,7 +88,7 @@ public class WxTradeController {
         if (TradeConstant.SUCCESS.equals(wxPayOrderNotifyResult.getReturnCode()) && TradeConstant.SUCCESS.equals(wxPayOrderNotifyResult.getResultCode())) {
             // 处理支付回调逻辑
         }
-        return TradeConstant.NOTIFY_SUCCESS;
+        return WxPayNotifyResponse.success("成功！");
     }
 
     /**
@@ -128,6 +129,6 @@ public class WxTradeController {
         if (TradeConstant.SUCCESS.equals(refundNotifyResult.getReturnCode())) {
             // 处理退款回调逻辑
         }
-        return TradeConstant.NOTIFY_SUCCESS;
+        return WxPayNotifyResponse.success("成功！");
     }
 }

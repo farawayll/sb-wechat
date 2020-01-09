@@ -1,10 +1,7 @@
 package com.lang.wechat.controller.ma;
 
 import cn.binarywang.wx.miniapp.api.WxMaService;
-import cn.binarywang.wx.miniapp.bean.WxMaKefuMessage;
-import cn.binarywang.wx.miniapp.bean.WxMaTemplateData;
-import cn.binarywang.wx.miniapp.bean.WxMaTemplateMessage;
-import cn.binarywang.wx.miniapp.bean.WxMaUniformMessage;
+import cn.binarywang.wx.miniapp.bean.*;
 import com.lang.wechat.util.R;
 import com.lang.wechat.util.StatusEnum;
 import lombok.extern.slf4j.Slf4j;
@@ -156,6 +153,32 @@ public class SendMaTemplateMsgController {
             return R.ok("发送服务号模板消息成功！");
         } catch (Exception e) {
             log.error("发送服务号模板消息失败！", e);
+            return R.error(StatusEnum.FAIL);
+        }
+    }
+
+    /**
+     * 发送小程序订阅消息
+     * @return
+     */
+    @GetMapping("/sendMaSubscribeMsg")
+    public R sendMaSubscribeMsg() {
+        try {
+            WxMaSubscribeMessage maMessage = WxMaSubscribeMessage.builder().build();
+            maMessage.setToUser("oV60Q0UVgSSkyMkxNEKzxbVZ1UAI");
+            maMessage.setPage("/pages/index/index");
+            maMessage.setTemplateId("uz7kmKIHzCv33duf5RsEnNPiWxALlRduSh4FXy4NrH0");
+            List<WxMaSubscribeData> dataList = new ArrayList<>();
+            dataList.add(new WxMaSubscribeData("thing2", "图书借阅"));
+            dataList.add(new WxMaSubscribeData("date5", "2019年10月1日"));
+            dataList.add(new WxMaSubscribeData("character_string1", "Q191029111010"));
+            maMessage.setData(dataList);
+            wxMaService.getMsgService().sendSubscribeMsg(maMessage);
+            // 订阅消息的其它功能 必须升级到3.6.0.B以上版本
+            //wxMaService.getSubscribeService().
+            return R.ok("发送小程序订阅消息成功！");
+        } catch (Exception e) {
+            log.error("发送小程序订阅消息失败！", e);
             return R.error(StatusEnum.FAIL);
         }
     }
