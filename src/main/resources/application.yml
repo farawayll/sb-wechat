@@ -1,33 +1,21 @@
 server:
   port: 8090
 
-#微信配置
 wx:
-  #微信支付配置
   pay:
-    #微信公众号或者小程序等的appid
     appId: xxxxx
-    #微信支付商户号
     mchId: xxxxx
-    #微信支付商户密钥
     mchKey: xxxxx
-    #服务商模式下的子商户公众账号ID，普通模式请不要配置
     #subAppId: xxxxx
-    #服务商模式下的子商户号，普通模式请不要配置
     #subMchId: xxxxx
-    #p12证书的位置，可以指定绝对路径，也可以指定类路径（以classpath:开头）。例 > classpath:apiclient_cert.p12
-    keyPath: xxxxx
-    #支付回调路径
+    keyPath: classpath:apiclient_cert.p12
     payNotify: xxxxx
-    #退费回调路径
     refundNotify: xxxxx
-  #微信公众号配置
   mp:
     appId: xxxxx
     secret: xxxxx
     token: xxxxx
     aesKey: xxxxx
-  #微信小程序配置
   ma:
     appId: xxxxx
     secret: xxxxx

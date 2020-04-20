@@ -8,7 +8,7 @@ import java.io.Serializable;
  * 微信支付统一下单参数
  */
 @Data
-public class WxPayRequestDTO implements Serializable {
+public class WxPayParam implements Serializable {
 
     private static final long serialVersionUID = 8013852287918156122L;
 

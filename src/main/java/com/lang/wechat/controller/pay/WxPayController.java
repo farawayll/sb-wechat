@@ -11,9 +11,9 @@ import com.github.binarywang.wxpay.bean.request.WxPayUnifiedOrderRequest;
 import com.github.binarywang.wxpay.constant.WxPayConstants;
 import com.github.binarywang.wxpay.exception.WxPayException;
 import com.github.binarywang.wxpay.service.WxPayService;
-import com.lang.wechat.entity.WxEntPayRequestDTO;
-import com.lang.wechat.entity.WxPayRequestDTO;
-import com.lang.wechat.entity.WxRefundRequestDTO;
+import com.lang.wechat.entity.WxEntPayParam;
+import com.lang.wechat.entity.WxPayParam;
+import com.lang.wechat.entity.WxRefundParam;
 import com.lang.wechat.util.R;
 import com.lang.wechat.util.StatusEnum;
 import lombok.extern.slf4j.Slf4j;
@@ -36,7 +36,7 @@ public class WxPayController {
      * 支付(获取支付的预支付对象)
      */
     @PostMapping("/createOrder")
-    public R createOrder(@RequestBody WxPayRequestDTO wxPayRequestDTO) {
+    public R createOrder(@RequestBody WxPayParam wxPayParam) {
         try {
             /**
              * 获取预支付对象的参数，以下都是必传参数。
@@ -46,13 +46,13 @@ public class WxPayController {
              * MWEB:H5支付。对应的wxPayService.createOrder(request)的结果是:WxPayMwebOrderResult。
              */
             WxPayUnifiedOrderRequest request = WxPayUnifiedOrderRequest.newBuilder()
-                    .body(wxPayRequestDTO.getBody()) // 支付内容
-                    .totalFee(wxPayRequestDTO.getTotalFee()) // 支付金额
-                    .spbillCreateIp(wxPayRequestDTO.getSpbillCreateIp()) // 用户ip地址
-                    .notifyUrl(wxPayRequestDTO.getNotifyUrl()) // 回调地址
+                    .body(wxPayParam.getBody()) // 支付内容
+                    .totalFee(wxPayParam.getTotalFee()) // 支付金额
+                    .spbillCreateIp(wxPayParam.getSpbillCreateIp()) // 用户ip地址
+                    .notifyUrl(wxPayParam.getNotifyUrl()) // 回调地址
                     .tradeType(WxPayConstants.TradeType.JSAPI) // 交易类型
-                    .openid(wxPayRequestDTO.getOpenid()) // 用户openid
-                    .outTradeNo(wxPayRequestDTO.getOutTradeNo()) // 支付订单号
+                    .openid(wxPayParam.getOpenid()) // 用户openid
+                    .outTradeNo(wxPayParam.getOutTradeNo()) // 支付订单号
                     .build();
             /**
              * 获取预支付对象并返回给前端。
@@ -99,15 +99,15 @@ public class WxPayController {
      * 退款
      */
     @PostMapping("/refund")
-    public R refund(WxRefundRequestDTO wxRefundRequestDTO) {
+    public R refund(WxRefundParam wxRefundParam) {
         try {
             WxPayRefundRequest request = WxPayRefundRequest.newBuilder()
-                    .outRefundNo(wxRefundRequestDTO.getOutRefundNo()) // 退费订单号
-                    .outTradeNo(wxRefundRequestDTO.getOutTradeNo()) // 原支付订单号
-                    .totalFee(wxRefundRequestDTO.getTotalFee()) // 原订单金额
-                    .refundFee(wxRefundRequestDTO.getRefundFee()) // 退费金额
-                    .refundDesc(wxRefundRequestDTO.getRefundDesc()) // 退费描述
-                    .notifyUrl(wxRefundRequestDTO.getNotifyUrl()) // 退费回调地址
+                    .outRefundNo(wxRefundParam.getOutRefundNo()) // 退费订单号
+                    .outTradeNo(wxRefundParam.getOutTradeNo()) // 原支付订单号
+                    .totalFee(wxRefundParam.getTotalFee()) // 原订单金额
+                    .refundFee(wxRefundParam.getRefundFee()) // 退费金额
+                    .refundDesc(wxRefundParam.getRefundDesc()) // 退费描述
+                    .notifyUrl(wxRefundParam.getNotifyUrl()) // 退费回调地址
                     .build();
             wxPayService.refund(request);
             return R.ok();
@@ -138,15 +138,15 @@ public class WxPayController {
      * 企业转账
      */
     @PostMapping("/entPay")
-    public R entPay(@RequestBody WxEntPayRequestDTO wxEntPayRequestDTO) {
+    public R entPay(@RequestBody WxEntPayParam wxEntPayParam) {
         try {
             EntPayRequest request = EntPayRequest.newBuilder()
-                    .partnerTradeNo(wxEntPayRequestDTO.getPartnerTradeNo())
-                    .openid(wxEntPayRequestDTO.getOpenId())
-                    .amount(wxEntPayRequestDTO.getAmount())
-                    .spbillCreateIp(wxEntPayRequestDTO.getSpbillCreateIp())
+                    .partnerTradeNo(wxEntPayParam.getPartnerTradeNo())
+                    .openid(wxEntPayParam.getOpenId())
+                    .amount(wxEntPayParam.getAmount())
+                    .spbillCreateIp(wxEntPayParam.getSpbillCreateIp())
                     .checkName(WxPayConstants.CheckNameOption.NO_CHECK)
-                    .description(wxEntPayRequestDTO.getDescription())
+                    .description(wxEntPayParam.getDescription())
                     .build();
             wxPayService.getEntPayService().entPay(request);
             return R.ok();
