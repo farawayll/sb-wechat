@@ -173,10 +173,10 @@ public class SendMaTemplateMsgController {
             maMessage.setToUser("oV60Q0UVgSSkyMkxNEKzxbVZ1UAI");
             maMessage.setPage("/pages/index/index");
             maMessage.setTemplateId("uz7kmKIHzCv33duf5RsEnNPiWxALlRduSh4FXy4NrH0");
-            List<WxMaSubscribeData> dataList = new ArrayList<>();
-            dataList.add(new WxMaSubscribeData("thing2", "图书借阅"));
-            dataList.add(new WxMaSubscribeData("date5", "2019年10月1日"));
-            dataList.add(new WxMaSubscribeData("character_string1", "Q191029111010"));
+            List<WxMaSubscribeMessage.Data> dataList = new ArrayList<>();
+            dataList.add(new WxMaSubscribeMessage.Data("thing2", "图书借阅"));
+            dataList.add(new WxMaSubscribeMessage.Data("date5", "2019年10月1日"));
+            dataList.add(new WxMaSubscribeMessage.Data("character_string1", "Q191029111010"));
             maMessage.setData(dataList);
             wxMaService.getMsgService().sendSubscribeMsg(maMessage);
             // 订阅消息的其它功能 必须升级到3.6.0.B以上版本

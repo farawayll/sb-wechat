@@ -5,45 +5,46 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.8.RELEASE</version>
+        <version>2.2.6.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+
     <groupId>com.lang</groupId>
     <artifactId>sb-wechat</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
+    
     <name>sb-wechat</name>
-    <description>Demo project for Spring Boot</description>
+    <description>微信开发Demo</description>
 
     <properties>
+        <!-- jdk版本 -->
         <java.version>1.8</java.version>
-        <wx.version>3.6.0</wx.version>
-        <hutool.version>4.6.5</hutool.version>
+        <!-- 微信tools版本 -->
+        <wx.version>3.7.0</wx.version>
+        <!-- hutool版本 -->
+        <hutool.version>5.3.1</hutool.version>
+        <!-- lombok版本 -->
         <lombok.version>1.18.10</lombok.version>
     </properties>
 
     <dependencies>
+        <!-- web开发 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-
+        <!-- redis-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
-
+        <!-- lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
         </dependency>
-
+        <!-- hutool -->
         <dependency>
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
