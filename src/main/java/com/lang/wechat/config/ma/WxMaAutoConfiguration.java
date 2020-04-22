@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
  * 小程序模板消息配置类
  */
 @Configuration
-public class MyWxMaConfig {
+public class WxMaAutoConfiguration {
 
 	@Value("${wx.ma.appId}")
 	private String appId;
@@ -29,7 +29,7 @@ public class MyWxMaConfig {
 	private String msgDataFormat;
 
 	@Autowired
-	private MyWxMaRedisConfig maRedisConfig;
+	private WxMaInRedisConfiguration maRedisConfig;
 
 	@Bean
 	public WxMaService wxMaService() {

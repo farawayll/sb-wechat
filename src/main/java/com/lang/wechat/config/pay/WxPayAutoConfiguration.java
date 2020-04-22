@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
  * 微信交易相关的配置类
  */
 @Configuration
-public class WxPayConfiguration {
+public class WxPayAutoConfiguration {
 
     /**
      * 微信公众号或者小程序等的appId

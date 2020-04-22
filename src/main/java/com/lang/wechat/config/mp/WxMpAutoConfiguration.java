@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
  * 服务号模板消息配置类
  */
 @Configuration
-public class MyWxMpConfig {
+public class WxMpAutoConfiguration {
 
     @Value("${wx.mp.appId}")
     private String appId;
@@ -26,7 +26,7 @@ public class MyWxMpConfig {
     private String aesKey;
 
     @Autowired
-    private MyWxMpRedisConfig mpRedisConfig;
+    private WxMpInRedisConfiguration mpRedisConfig;
 
     @Bean
     public WxMpService wxMpService() {

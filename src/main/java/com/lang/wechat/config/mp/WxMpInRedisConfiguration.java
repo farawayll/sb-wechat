@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 import java.util.concurrent.TimeUnit;
 
 @Component
-public class MyWxMpRedisConfig extends WxMpDefaultConfigImpl {
+public class WxMpInRedisConfiguration extends WxMpDefaultConfigImpl {
 
     private final static String MP_ACCESS_TOKEN = "wx:mp:access_token";
 
@@ -16,7 +16,7 @@ public class MyWxMpRedisConfig extends WxMpDefaultConfigImpl {
     private StringRedisTemplate stringRedisTemplate;
 
     /**
-     * 获取token
+     * 获取access_token
      */
     @Override
     public String getAccessToken() {
@@ -24,8 +24,7 @@ public class MyWxMpRedisConfig extends WxMpDefaultConfigImpl {
     }
 
     /**
-     * token是否过期
-     * 提前5秒
+     * access_token是否过期 提前5秒
      */
     @Override
     public boolean isAccessTokenExpired() {
@@ -33,8 +32,7 @@ public class MyWxMpRedisConfig extends WxMpDefaultConfigImpl {
     }
 
     /**
-     * 更新token 并设置过期时间
-     * 微信官方的access_token过期时间为2小时
+     * 如果过期则更新access_token 并设置过期时间为2小时(微信官方的access_token过期时间为2小时,并且wxJava已实现)
      */
     @Override
     public synchronized void updateAccessToken(String accessToken, int expiresInSeconds) {
@@ -43,7 +41,7 @@ public class MyWxMpRedisConfig extends WxMpDefaultConfigImpl {
     }
 
     /**
-     * 强制过期token
+     * 强制过期access_token
      */
     @Override
     public void expireAccessToken() {

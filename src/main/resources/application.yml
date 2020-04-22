@@ -6,20 +6,22 @@ wx:
     appId: xxxxx
     mchId: xxxxx
     mchKey: xxxxx
-    #subAppId: xxxxx
-    #subMchId: xxxxx
     keyPath: classpath:apiclient_cert.p12
     payNotify: xxxxx
     refundNotify: xxxxx
   mp:
-    appId: xxxxx
-    secret: xxxxx
-    token: xxxxx
+    appId: wx59963d706d00f94e
+    secret: ebbf0a85144f894324f3bf2bd46e31e5
+    token: faraway
     aesKey: xxxxx
   ma:
-    appId: xxxxx
-    secret: xxxxx
+    appId: wx68dc2d8c542a6f67
+    secret: 0ef55fa5932bd9f882b80fc68d4a5258
     token: xxxxx
     aesKey: xxxxx
     msgDataFormat: JSON
 
+spring:
+  redis:
+    host: 123.57.243.185
+    port: 8379

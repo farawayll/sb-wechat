@@ -34,10 +34,10 @@ public class SendMpTemplateMsgController {
     public R sendMpTemplateMsg() {
         try {
             WxMpTemplateMessage mpTemplateMessage = WxMpTemplateMessage.builder()
-                    .toUser("oHUFm1ZCrSH5fasZvPKT6z8CeJKg")
-                    .templateId("UlJ4dw5NDFWMxGSI5FIROwL8rtzExw7Sg2qla4laUnw")
-                    .miniProgram(new WxMpTemplateMessage.MiniProgram(appId, "/pages/index/index", true)) //跳小程序 2选1
-                    //.url("http://www.baidu.com") //跳H5 2选1
+                    .toUser("otal2t22M_fB96D7ftqAekegdZK0")
+                    .templateId("N78dyQecpJOeQu2x1f39MTlBl8Ca3W-QOiX5iX9XB9M")
+                    //.miniProgram(new WxMpTemplateMessage.MiniProgram(appId, "/pages/index/index", true)) //跳小程序 2选1
+                    .url("http://www.baidu.com") //跳H5 2选1
                     .build();
 
             List<WxMpTemplateData> dataList = new ArrayList<>();

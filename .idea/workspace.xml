@@ -2,12 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a97b520-36f3-4c91-921e-d657bfd71141" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lang/wechat/config/redis/RedisTemplateConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lang/wechat/config/ma/MyWxMaConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lang/wechat/config/ma/WxMaAutoConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lang/wechat/config/ma/MyWxMaRedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lang/wechat/config/ma/WxMaInRedisConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lang/wechat/config/mp/MyWxMpConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lang/wechat/config/mp/WxMpAutoConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lang/wechat/config/mp/MyWxMpRedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lang/wechat/config/mp/WxMpInRedisConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lang/wechat/config/pay/WxPayConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lang/wechat/config/pay/WxPayAutoConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lang/wechat/controller/ma/SendMaTemplateMsgController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lang/wechat/controller/ma/SendMaTemplateMsgController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lang/wechat/controller/mp/SendMpTemplateMsgController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lang/wechat/controller/mp/SendMpTemplateMsgController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lang/wechat/controller/pay/WxPayController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lang/wechat/controller/pay/WxPayController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lang/wechat/entity/WxEntPayRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lang/wechat/entity/WxEntPayParam.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lang/wechat/entity/WxPayRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lang/wechat/entity/WxPayParam.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lang/wechat/entity/WxRefundRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lang/wechat/entity/WxRefundParam.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/apiclient_cert.p12" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/wx/apiclient_cert.p12" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lang/wechat/entity/WxEntPayParam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lang/wechat/entity/WxEntPayEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lang/wechat/entity/WxPayParam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lang/wechat/entity/WxPayEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lang/wechat/entity/WxRefundParam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lang/wechat/entity/WxRefundEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,21 +61,25 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="File.Encoding" />
   </component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\MyFile\ThirdProject\sb-wechat\src\main\resources\wx" />
-      <recent name="E:\MyFile\ThirdProject\sb-wechat\src\main\resources" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.lang.wechat.entity" />
-      <recent name="com.lang.wechat.config.pay" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\MyFile\ThirdProject\sb-wechat\src\main\resources" />
       <recent name="E:\MyProject\sb-wechat\src\main\java\com\lang\wechat\util" />
       <recent name="E:\MyProject\sb-wechat\src\main\java\com\lang\wechat\config\mp" />
       <recent name="E:\MyProject\sb-wechat\src\main\java\com\lang\wechat\config\ma" />
       <recent name="E:\MyProject\sb-wechat\src\main\resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.lang.wechat.config.redis" />
+      <recent name="com.lang.wechat.entity" />
+      <recent name="com.lang.wechat.config.pay" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\MyFile\ThirdProject\sb-wechat\src\main\resources" />
+      <recent name="E:\MyFile\ThirdProject\sb-wechat\src\main\resources\wx" />
     </key>
   </component>
   <component name="RunManager">
@@ -114,7 +125,8 @@
       <workItem from="1581647606493" duration="1366000" />
       <workItem from="1582076920692" duration="1006000" />
       <workItem from="1582204762219" duration="631000" />
-      <workItem from="1587368661461" duration="10830000" />
+      <workItem from="1587368661461" duration="10950000" />
+      <workItem from="1587524470588" duration="6455000" />
     </task>
     <task id="LOCAL-00001" summary="删除target文件">
       <created>1569329045301</created>
@@ -137,7 +149,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587380206290</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="更新">
+      <created>1587381062131</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1587381062131</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,62 +184,82 @@
     <option name="LAST_COMMIT_MESSAGE" value="更新" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2367" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1587380328924">
+    <state x="2367" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1587524788792">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2367" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.834/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587380328924" />
+    <state x="2367" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.834/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587524788792" />
     <state x="2610" y="286" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1587377091302">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2610" y="286" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.834/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587377091302" />
-    <state x="2075" y="136" key="CommitChangelistDialog2" timestamp="1587380205439">
+    <state x="2075" y="136" key="CommitChangelistDialog2" timestamp="1587381061440">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2075" y="136" key="CommitChangelistDialog2/0.0.1536.834/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587380205439" />
+    <state x="2075" y="136" key="CommitChangelistDialog2/0.0.1536.834/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587381061440" />
+    <state x="1920" y="188" key="DiffContextDialog" timestamp="1587381057098">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="1920" y="188" key="DiffContextDialog/0.0.1536.834/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587381057098" />
     <state x="421" y="100" key="FileChooserDialogImpl" timestamp="1582077011311">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="421" y="100" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1582077011311" />
-    <state width="1877" height="385" key="GridCell.Tab.0.bottom" timestamp="1587381026127">
+    <state width="1877" height="364" key="GridCell.Tab.0.bottom" timestamp="1587528454273">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="385" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587381026127" />
-    <state width="1877" height="385" key="GridCell.Tab.0.center" timestamp="1587381026127">
+    <state width="1877" height="364" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587528454273" />
+    <state width="1877" height="364" key="GridCell.Tab.0.center" timestamp="1587528454273">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="385" key="GridCell.Tab.0.center/0.0.1536.834/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587381026127" />
-    <state width="1877" height="385" key="GridCell.Tab.0.left" timestamp="1587381026127">
+    <state width="1877" height="364" key="GridCell.Tab.0.center/0.0.1536.834/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587528454273" />
+    <state width="1877" height="364" key="GridCell.Tab.0.left" timestamp="1587528454273">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="385" key="GridCell.Tab.0.left/0.0.1536.834/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587381026127" />
-    <state width="1877" height="385" key="GridCell.Tab.0.right" timestamp="1587381026127">
+    <state width="1877" height="364" key="GridCell.Tab.0.left/0.0.1536.834/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587528454273" />
+    <state width="1877" height="364" key="GridCell.Tab.0.right" timestamp="1587528454273">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="385" key="GridCell.Tab.0.right/0.0.1536.834/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587381026127" />
-    <state width="1877" height="385" key="GridCell.Tab.1.bottom" timestamp="1587381026128">
+    <state width="1877" height="364" key="GridCell.Tab.0.right/0.0.1536.834/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587528454273" />
+    <state width="1877" height="364" key="GridCell.Tab.1.bottom" timestamp="1587528454273">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="385" key="GridCell.Tab.1.bottom/0.0.1536.834/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587381026128" />
-    <state width="1877" height="385" key="GridCell.Tab.1.center" timestamp="1587381026127">
+    <state width="1877" height="364" key="GridCell.Tab.1.bottom/0.0.1536.834/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587528454273" />
+    <state width="1877" height="364" key="GridCell.Tab.1.center" timestamp="1587528454273">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="385" key="GridCell.Tab.1.center/0.0.1536.834/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587381026127" />
-    <state width="1877" height="385" key="GridCell.Tab.1.left" timestamp="1587381026127">
+    <state width="1877" height="364" key="GridCell.Tab.1.center/0.0.1536.834/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587528454273" />
+    <state width="1877" height="364" key="GridCell.Tab.1.left" timestamp="1587528454273">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="385" key="GridCell.Tab.1.left/0.0.1536.834/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587381026127" />
-    <state width="1877" height="385" key="GridCell.Tab.1.right" timestamp="1587381026127">
+    <state width="1877" height="364" key="GridCell.Tab.1.left/0.0.1536.834/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587528454273" />
+    <state width="1877" height="364" key="GridCell.Tab.1.right" timestamp="1587528454273">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="385" key="GridCell.Tab.1.right/0.0.1536.834/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587381026127" />
+    <state width="1877" height="364" key="GridCell.Tab.1.right/0.0.1536.834/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587528454273" />
+    <state width="1877" height="364" key="GridCell.Tab.2.bottom" timestamp="1587528454273">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="364" key="GridCell.Tab.2.bottom/0.0.1536.834/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587528454273" />
+    <state width="1877" height="364" key="GridCell.Tab.2.center" timestamp="1587528454273">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="364" key="GridCell.Tab.2.center/0.0.1536.834/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587528454273" />
+    <state width="1877" height="364" key="GridCell.Tab.2.left" timestamp="1587528454273">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="364" key="GridCell.Tab.2.left/0.0.1536.834/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587528454273" />
+    <state width="1877" height="364" key="GridCell.Tab.2.right" timestamp="1587528454273">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="364" key="GridCell.Tab.2.right/0.0.1536.834/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587528454273" />
     <state x="2133" y="0" key="SettingsEditor" timestamp="1587380958780">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="142" y="0" key="SettingsEditor/0.0.1280.689@0.0.1280.689" timestamp="1581500301299" />
     <state x="2133" y="0" key="SettingsEditor/0.0.1536.834/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587380958780" />
-    <state x="2472" y="273" key="Vcs.Push.Dialog.v2" timestamp="1587380207806">
+    <state x="2472" y="273" key="Vcs.Push.Dialog.v2" timestamp="1587381064753">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2472" y="273" key="Vcs.Push.Dialog.v2/0.0.1536.834/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587380207806" />
+    <state x="2472" y="273" key="Vcs.Push.Dialog.v2/0.0.1536.834/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587381064753" />
   </component>
 </project>

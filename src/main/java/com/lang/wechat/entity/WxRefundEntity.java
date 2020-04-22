@@ -8,7 +8,7 @@ import java.io.Serializable;
  * 微信退款申请参数
  */
 @Data
-public class WxRefundParam implements Serializable {
+public class WxRefundEntity implements Serializable {
 
     private static final long serialVersionUID = 8013852287918156122L;
 
