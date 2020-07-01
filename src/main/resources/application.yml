@@ -24,4 +24,4 @@ wx:
 spring:
   redis:
     host: 123.57.243.185
-    port: 8379
+    port: 6379
