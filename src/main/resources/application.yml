@@ -17,11 +17,13 @@ wx:
   ma:
     appId: wx68dc2d8c542a6f67
     secret: 0ef55fa5932bd9f882b80fc68d4a5258
-    token: xxxxx
-    aesKey: xxxxx
+    token: woodyclub
+    aesKey: ipuPBNs3wgXoSOVjoHGVFeucArPDu35f0glDTozUoMB
     msgDataFormat: JSON
 
 spring:
   redis:
     host: 123.57.243.185
     port: 6379
+    timeout: 2000
+    database: 1

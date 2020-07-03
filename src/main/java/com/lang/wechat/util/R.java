@@ -1,61 +1,56 @@
-/**
- * Copyright (c) 2016-2019 人人开源 All rights reserved.
- * <p>
- * https://www.renren.io
- * <p>
- * 版权所有，侵权必究！
- */
-
 package com.lang.wechat.util;
 
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.io.Serializable;
 
 /**
  * 返回数据
  *
  * @author Mark sunlightcs@gmail.com
  */
-public class R extends LinkedHashMap<String, Object> {
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class R<T> implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    public R() {
-        put("code", StatusEnum.SUCCESS.getCode());
-        put("msg", StatusEnum.SUCCESS.getMsg());
-    }
+	private int code;
 
-    public static R error(int code, String msg) {
-        R r = new R();
-        r.put("code", code);
-        r.put("msg", msg);
-        return r;
-    }
+	private String message;
 
-    public static R error(StatusEnum statusEnum) {
-        R r = new R();
-        r.put("code", statusEnum.getCode());
-        r.put("msg", statusEnum.getMsg());
-        return r;
-    }
+	private T data;
 
-    public static R ok() {
-        return new R();
-    }
+	/**
+	 * 失败
+	 */
+	public static <T> R<T> error() {
+		return getResult(null, Results.FAIL.getCode(), Results.FAIL.getMsg());
+	}
 
-    public static R ok(String msg) {
-        R r = new R();
-        r.put("msg", msg);
-        return r;
-    }
+	public static <T> R<T> error(String msg) {
+		return getResult(null, Results.FAIL.getCode(), msg);
+	}
 
-    public static R ok(Object data) {
-        R r = new R();
-        Map dataMap = new HashMap();
-        dataMap.put("data", data);
-        r.putAll(dataMap);
-        return r;
-    }
+	public static <T> R<T> error(Results results) {
+		return getResult(null, results.getCode(), results.getMsg());
+	}
 
+	/**
+	 * 成功
+	 */
+	public static <T> R<T> ok() {
+		return getResult(null, Results.SUCCESS.getCode(), Results.SUCCESS.getMsg());
+	}
+
+	public static <T> R<T> ok(T data) {
+		return getResult(data, Results.SUCCESS.getCode(), Results.SUCCESS.getMsg());
+	}
+
+	private static <T> R<T> getResult(T data, int code, String msg) {
+		return new R<>(code, msg, data);
+	}
 }

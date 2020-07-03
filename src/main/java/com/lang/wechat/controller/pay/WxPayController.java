@@ -15,7 +15,7 @@ import com.lang.wechat.entity.WxEntPayEntity;
 import com.lang.wechat.entity.WxPayEntity;
 import com.lang.wechat.entity.WxRefundEntity;
 import com.lang.wechat.util.R;
-import com.lang.wechat.util.StatusEnum;
+import com.lang.wechat.util.Results;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -73,7 +73,7 @@ public class WxPayController {
             return R.ok(payResult);
         } catch (WxPayException e) {
             log.error("获取微信预支付对象失败！", e);
-            return R.error(StatusEnum.FAIL);
+            return R.error(Results.FAIL);
         }
     }
 
@@ -113,7 +113,7 @@ public class WxPayController {
             return R.ok();
         } catch (WxPayException e) {
             log.error("退款失败！", e);
-            return R.error(StatusEnum.FAIL);
+            return R.error(Results.FAIL);
         }
     }
 
@@ -152,7 +152,7 @@ public class WxPayController {
             return R.ok();
         } catch (Exception e) {
             log.error("企业转账失败！", e);
-            return R.error(StatusEnum.FAIL);
+            return R.error(Results.FAIL);
         }
 
     }

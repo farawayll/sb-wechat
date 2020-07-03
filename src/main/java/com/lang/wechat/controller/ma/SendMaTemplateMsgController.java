@@ -6,7 +6,7 @@ import cn.binarywang.wx.miniapp.bean.WxMaSubscribeMessage;
 import cn.binarywang.wx.miniapp.bean.WxMaTemplateData;
 import cn.binarywang.wx.miniapp.bean.WxMaUniformMessage;
 import com.lang.wechat.util.R;
-import com.lang.wechat.util.StatusEnum;
+import com.lang.wechat.util.Results;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -65,7 +65,7 @@ public class SendMaTemplateMsgController {
             return R.ok("发送小程序文字客服消息成功！");
         } catch (Exception e) {
             log.error("发送小程序文字客服消息失败！", e);
-            return R.error(StatusEnum.FAIL);
+            return R.error(Results.FAIL);
         }
     }
 
@@ -99,7 +99,7 @@ public class SendMaTemplateMsgController {
             return R.ok("发送服务号模板消息成功！");
         } catch (Exception e) {
             log.error("发送服务号模板消息失败！", e);
-            return R.error(StatusEnum.FAIL);
+            return R.error(Results.FAIL);
         }
     }
 
@@ -126,7 +126,7 @@ public class SendMaTemplateMsgController {
             return R.ok("发送小程序订阅消息成功！");
         } catch (Exception e) {
             log.error("发送小程序订阅消息失败！", e);
-            return R.error(StatusEnum.FAIL);
+            return R.error(Results.FAIL);
         }
     }
 }
