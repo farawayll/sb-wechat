@@ -113,7 +113,6 @@ public class WxMaAutoConfiguration {
 			}
 			config.setTestOnBorrow(true);
 			config.setTestWhileIdle(true);
-
 			jedisPool = new JedisPool(config, redisProperties.getHost(), redisProperties.getPort(),
 					redisProperties.getTimeout(), redisProperties.getPassword(), redisProperties.getDatabase());
 		} else {
