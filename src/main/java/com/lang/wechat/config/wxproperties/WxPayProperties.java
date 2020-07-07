@@ -38,7 +38,7 @@ public class WxPayProperties implements Serializable {
 	private String subMchId;
 
 	/**
-	 * apiclient_cert.p12文件的绝对路径，或者如果放在项目中，请以classpath:开头指定.
+	 * apiclient_cert.p12文件的绝对路径，或者如果放在项目中，请以classpath:开头指定
 	 */
 	private String keyPath;
 
@@ -48,7 +48,7 @@ public class WxPayProperties implements Serializable {
 	private String serviceId;
 
 	/**
-	 * 证书序列号
+	 * apiV3 证书序列号
 	 */
 	private String certSerialNo;
 
@@ -63,12 +63,12 @@ public class WxPayProperties implements Serializable {
 	private String payScoreNotifyUrl;
 
 	/**
-	 * apiv3 商户apiclient_key.pem
+	 * apiclient_key.pem证书文件的绝对路径或者以classpath:开头的类路径
 	 */
 	private String privateKeyPath;
 
 	/**
-	 * apiv3 商户apiclient_cert.pem
+	 * apiclient_cert.pem证书文件的绝对路径或者以classpath:开头的类路径
 	 */
 	private String privateCertPath;
 

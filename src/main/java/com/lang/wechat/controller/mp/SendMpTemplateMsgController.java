@@ -1,7 +1,7 @@
 package com.lang.wechat.controller.mp;
 
 import com.lang.wechat.util.R;
-import com.lang.wechat.util.Results;
+import com.lang.wechat.util.ResultType;
 import lombok.extern.slf4j.Slf4j;
 import me.chanjar.weixin.mp.api.WxMpService;
 import me.chanjar.weixin.mp.bean.kefu.WxMpKefuMessage;
@@ -52,7 +52,7 @@ public class SendMpTemplateMsgController {
             return R.ok("发送服务号模板消息成功！");
         } catch (Exception e) {
             log.error("发送服务号模板消息失败！", e);
-            return R.error(Results.FAIL);
+            return R.error(ResultType.FAIL);
         }
     }
 
@@ -114,7 +114,7 @@ public class SendMpTemplateMsgController {
             return R.ok("发送服务号客服消息成功！");
         } catch (Exception e) {
             log.error("发送服务号客服消息失败！", e);
-            return R.error(Results.FAIL);
+            return R.error(ResultType.FAIL);
         }
     }
 

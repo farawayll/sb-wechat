@@ -3,22 +3,30 @@ server:
 
 wx:
   pay:
-    appId: xxxxx
-    mchId: xxxxx
-    mchKey: xxxxx
-    keyPath: classpath:apiclient_cert.p12
-    payNotify: xxxxx
-    refundNotify: xxxxx
+    # 微信支付
+    appId: xxx
+    mchId: xxx
+    mchKey: xxx
+    keyPath: classpath:xxx
+    payNotify: xxx
+    refundNotify: xxx
+    # 微信支付分（serviceId设置成字符串）
+    serviceId: "00002004000000640364551442486693"
+    privateKeyPath: classpath:xxx
+    privateCertPath: classpath:xxx
+    certSerialNo: xxx
+    apiv3Key: xxx
+    payScoreNotifyUrl: xxx
   mp:
-    appId: wx59963d706d00f94e
-    secret: ebbf0a85144f894324f3bf2bd46e31e5
-    token: faraway
+    appId: xxxxx
+    secret: xxxxx
+    token: xxxxx
     aesKey: xxxxx
   ma:
-    appId: wx68dc2d8c542a6f67
-    secret: 0ef55fa5932bd9f882b80fc68d4a5258
-    token: woodyclub
-    aesKey: ipuPBNs3wgXoSOVjoHGVFeucArPDu35f0glDTozUoMB
+    appId: xxxxx
+    secret: xxxxx
+    token: xxxxx
+    aesKey: xxxxx
     msgDataFormat: JSON
 
 spring:
