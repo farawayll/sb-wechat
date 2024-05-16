@@ -24,7 +24,7 @@
         <!-- 微信版本 -->
         <wx.version>3.8.3.B</wx.version>
         <!-- hutool版本 -->
-        <hutool.version>5.3.7</hutool.version>
+        <hutool.version>5.8.21</hutool.version>
         <!-- jedis -->
         <jedis.version>2.9.0</jedis.version>
     </properties>
